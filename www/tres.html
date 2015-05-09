@@ -29,7 +29,8 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
         <script type="text/javascript">
-        		document.addEventListener("deviceready", onDeviceReady, false);
+            
+      document.addEventListener("deviceready", onDeviceReady, false);
       // PhoneGap esta listo
       function onDeviceReady() {
         
@@ -62,21 +63,22 @@
       
       //BOTON ATRAS ANDROID
       function onBackKeyDown(){
-        if($.mobile.activePage.attr('id') == 'home'){ // PARA AÑADIR MAS USAR SEPARADORES "||"
-          navigator.notification.confirm(
-          '¿Salir de la aplicación?', 
-          function(button) {
-            if (button == 2) {
-              navigator.app.exitApp();
-            }
-          }, 
-          'Salir', 'No,Si');return false;
-        }
-        else {                            //else if ($.mobile.activePage.attr('id') == 'charlas'){
+        //if($.mobile.activePage.attr('id') == 'home'){ // PARA AÑADIR MAS USAR SEPARADORES "||"
+         // navigator.notification.confirm(
+         // '¿Salir de la aplicación?', 
+         // function(button) {
+         //   if (button == 2) {
+         //     navigator.app.exitApp();
+        //    }
+        //  }, 
+        //  'Salir', 'No,Si');return false;
+      //  }
+      //  else {                            //else if ($.mobile.activePage.attr('id') == 'charlas'){
                                         //$.mobile.changePage('#home');
                                           //}else
-          navigator.app.backHistory();
-        }
+        history.go(-1);
+        navigator.app.backHistory();
+       // }
       }
       //FIN BOTON ATRAS ANDROID
         </script>
